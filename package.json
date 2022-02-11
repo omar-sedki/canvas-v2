@@ -1,0 +1,33 @@
+{
+  "name": "canvas-v2",
+  "version": "1.0.0",
+  "description": "Add more possibilities to HTML Canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omar-sedki/canvas-V2.git"
+  },
+  "keywords": [
+    "canvas"
+  ],
+  "author": "Omar Sedki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omar-sedki/canvas-V2/issues"
+  },
+  "homepage": "https://github.com/omar-sedki/canvas-V2#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.7"
+  },
+  "dependencies": {
+    "gulp-file-include": "^2.3.0",
+    "gulp-rename": "^2.0.0"
+  }
+}

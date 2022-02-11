@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet"> 
+		 <link rel="stylesheet" href="css/styles.css">
+		<title>Canvas V2</title>
+
+	</head>
+	<body>
+		
+		<h1 style="text-align:center;" ><img  class="logo" src="images/logo.png"/></h1>
+		<p>
+		The HTML <span class="highlight">&lt;canvas&gt;</span> element is used to draw graphics on a web page.<br/>
+		<span class="highlight">Canvas V2 </span> is a JavaScript library which Extend HTML Canvas to make the use of it more simple. 
+		</p>
+		<script src="js/canvas-v2.js"></script>
+		
+		<div style="text-align:center;margin:20px">
+			<pre><code class="language-js hljs language-javascript">ctx.circle("50%", "50%", "25%")</code></pre>
+			<canvas id="canvas1" width="600" height="200" style="border:1px solid #000000;"></canvas>   
+		</div>
+		<script>
+		 //highlight code inside of <pre><code> tags		
+			hljs.highlightAll();
+
+			var c = document.getElementById("canvas1");
+			var ctx = c.getContext("2d");
+			ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+			ctx.lineWidth =2;
+			ctx.fillStyle = '#cbf692';
+			ctx.circle("50%", "50%", "25%");
+			ctx.fill();
+			ctx.stroke();
+	</script>
+	
+	<div style="text-align:center;margin:20px">
+			<pre><code class="language-js hljs language-javascript">ctx.square(200,50,200,{borderRadius:20})</code></pre>
+			<canvas id="canvas2" width="600" height="300" style="border:1px solid #000000;"></canvas>   
+		</div>
+		<script>
+		 //highlight code inside of <pre><code> tags		
+			hljs.highlightAll();
+
+			var c = document.getElementById("canvas2");
+			var ctx = c.getContext("2d");
+			ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+			ctx.lineWidth =2;
+			ctx.fillStyle = '#cbf692';
+			ctx.square(200,50,200,{borderRadius:20});
+			ctx.fill();
+			ctx.stroke();
+	</script>
+
+	<script>
+	//ctx.rect("10%", "5%", "80%","40%",{borderRadius:[30,30,30,30]});
+	//ctx.square("10%", "50%", "20%",{borderRadius:[20,20,20,20]});
+		/*
+	 ctx.roundBorder=20;
+	 ctx.moveTo(50,50);
+	 ctx.lineTo(150,250);
+	 ctx.lineTo(200,150);
+	 ctx.stroke();
+
+
+	 a=new line({x:0,y:0},{x:250,y:200}).getPointOnLineDistanceFrom("A",100);
+	 alert(a.x+":"+a.y);
+	 ctx.beginPath();
+	ctx.arc(a.x, a.y, 10, 0, 2 * Math.PI);
+	ctx.stroke(); 
+	*/
+	</script>
+	</body>
+</html>

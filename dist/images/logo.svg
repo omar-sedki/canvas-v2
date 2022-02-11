@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="300"
+   viewBox="0 0 158.75 79.375002"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\Users\Omar\bitmap.png"
+   inkscape:export-xdpi="103.44894"
+   inkscape:export-ydpi="103.44894">
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Cross-smooth"
+       id="filter1168">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="3.84"
+         result="blur1"
+         id="feGaussianBlur1152" />
+      <feComposite
+         in="blur1"
+         in2="blur1"
+         operator="in"
+         result="composite1"
+         id="feComposite1154" />
+      <feComposite
+         in="composite1"
+         in2="composite1"
+         k2="1.48"
+         operator="arithmetic"
+         result="composite2"
+         id="feComposite1156"
+         k1="0"
+         k3="0"
+         k4="0" />
+      <feColorMatrix
+         in="composite2"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 36.3203 0 "
+         result="colormatrix1"
+         id="feColorMatrix1158" />
+      <feGaussianBlur
+         stdDeviation="1"
+         result="blur2"
+         id="feGaussianBlur1160" />
+      <feColorMatrix
+         in="blur2"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 5 -1 "
+         result="colormatrix2"
+         id="feColorMatrix1162" />
+      <feBlend
+         in="SourceGraphic"
+         in2="colormatrix2"
+         stdDeviation="17"
+         mode="normal"
+         result="blend"
+         id="feBlend1164" />
+      <feComposite
+         in="blend"
+         in2="colormatrix2"
+         operator="in"
+         result="composite3"
+         id="feComposite1166" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="326.57318"
+     inkscape:cy="263.6946"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-217.62498)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.26779366px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.58169484"
+       x="43.457531"
+       y="278.51129"
+       id="text817"><tspan
+         sodipodi:role="line"
+         id="tspan815"
+         x="43.457531"
+         y="278.51129"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.43321991px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli';stroke-width:0.58169484">anvas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#fffef7;fill-opacity:1;stroke:#8ff31d;stroke-width:0.66500002;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter1168)"
+       x="57.536732"
+       y="118.01659"
+       id="text817-4"
+       transform="matrix(1.9192619,0,0,1.9192619,-51.660262,25.692739)"><tspan
+         sodipodi:role="line"
+         id="tspan815-9"
+         x="57.536732"
+         y="118.01659"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87777805px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli';fill:#fffef7;fill-opacity:1;stroke:#8ff31d;stroke-width:0.66500002;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill">Version 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.26779366px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.58169484"
+       x="-4.6359572"
+       y="286.91748"
+       id="text817-9"><tspan
+         sodipodi:role="line"
+         id="tspan815-4"
+         x="-4.6359572"
+         y="286.91748"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.43321991px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli';stroke-width:0.58169484"><tspan
+           style="font-size:77.55931854px;stroke-width:0.58169484"
+           id="tspan843-2">C</tspan></tspan></text>
+  </g>
+</svg>
