@@ -49,3 +49,21 @@ The  ```fillRect(x,y,width,height) ```  method draws a rectangle, filled with th
   <img src="src/images/canvas/fillRect(150,50,300,200).png" />
 </p>
 
+## Full Code Example 
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	</head>
+	<body>
+	 <canvas id="v2" width="600" height="300" style="border:1px solid #000000"></canvas>  
+  <script crossorigin src="https://cdn.jsdelivr.net/gh/omar-sedki/canvas-v2@main/dist/js/canvas-v2.js"></script>
+  <script>
+    var canvas = document.getElementById("v2");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#cbf692";
+    ctx.fillRect(150, 50, 300, 200); 
+  </script> 
+	</body>
+</html>
+```
