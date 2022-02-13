@@ -45,4 +45,7 @@ The  ```fillStyle ``` property can be a CSS color, a gradient, or a pattern
 
 The  ```fillRect(x,y,width,height) ```  method draws a rectangle, filled with the  ```fillStyle```
 
+<p align="center">
+  <img src="src/images/canvas/fillRect(150,50,300,200).png" />
+</p>
 
