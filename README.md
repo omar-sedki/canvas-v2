@@ -32,7 +32,7 @@ var ctx = canvas.getContext("2d");
 </script> 
 ```
 
-  Get the ```<canvas>``` element by calling the document.getElementById() method, then you can access the drawing context using its getContext() method. now you can draw on the canvas.
+  Get the ```<canvas>``` element by calling the ```document.getElementById()``` method, then you can access the drawing context using its ```getContext()``` method. now you can draw on the canvas.
   
   
 ## Draw on the Canvas
