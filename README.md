@@ -67,3 +67,9 @@ The  ```fillRect(x,y,width,height) ```  method draws a rectangle, filled with th
 	</body>
 </html>
 ```
+
+## Shapes
+
+### Square
+ ```ctx.square(x, y, width, height)```
+The square() method creates a square path whose starting point is at (x, y) and whose size is specified by size. 
