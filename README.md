@@ -70,6 +70,22 @@ The  ```fillRect(x,y,width,height) ```  method draws a rectangle, filled with th
 
 ## Shapes
 
+### Triangle
+ ```ctx.triangle( {x1, y1}, { x2, y2}, {x3, y3} )```
+The ```triangle()``` method creates a triangle from 3 points . 
+```x1, y1``` coordinate of first point, 
+```x2, y2``` coordinate of second point, 
+```x3, y3``` coordinate of third point.
+
+
 ### Square
- ```ctx.square(x, y, width, height)```
-The square() method creates a square path whose starting point is at (x, y) and whose size is specified by size. 
+ ```ctx.square(x, y, size)```
+The ```square()``` method creates a square path whose starting point is at ```(x, y)``` and whose size is specified by ```size```. 
+
+### Rectangle
+ ```ctx.rect(x, y, width, height)```
+The ```rect()``` method creates a rectangle path whose starting point is at ```(x, y)``` and whose size is specified by ```width, height```. 
+
+### Circle
+ ```ctx.circle(x, y, radius)```
+The ```circle()``` method creates a circle path whose centered at ```(x, y)``` and whose radius is specified by ```radius```. 
