@@ -89,3 +89,7 @@ The ```rect()``` method creates a rectangle path whose starting point is at ```(
 ### Circle
  ```ctx.circle(x, y, radius)```
 The ```circle()``` method creates a circle path whose centered at ```(x, y)``` and whose radius is specified by ```radius```. 
+
+### Polygon
+```ctx.polygon(x, y, size, sides )```
+The ```polygon()``` method creates a polygon path whose centered at ```(x, y)``` and  has sides specified by ```sides``` and size of sides is specified by ```size```.
