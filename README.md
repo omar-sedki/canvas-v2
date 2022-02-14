@@ -71,12 +71,21 @@ The  ```fillRect(x,y,width,height) ```  method draws a rectangle, filled with th
 ## Shapes
 
 ### Triangle
- ```ctx.triangle( {x1, y1}, { x2, y2}, {x3, y3} )```
+ ```ctx.triangle( pointA, pointB, pointC )```
 The ```triangle()``` method creates a triangle from 3 points . 
-```x1, y1``` coordinate of first point, 
-```x2, y2``` coordinate of second point, 
-```x3, y3``` coordinate of third point.
+```pointA.x, pointA.y``` coordinate of first point, 
+```pointB.x, pointB.y``` coordinate of second point, 
+```pointC.x, pointC.y``` coordinate of third point.
 
+
+ex : 
+```javascript
+ctx.triangle({x:90,y:50},{x:250,y:150},{x:150,y:250})
+```
+
+<p align="center">
+  <img src="src/images/canvas/triangle-0.png" />
+</p>
 
 ### Square
  ```ctx.square(x, y, size)```
@@ -89,6 +98,15 @@ The ```rect()``` method creates a rectangle path whose starting point is at ```(
 ### Circle
  ```ctx.circle(x, y, radius)```
 The ```circle()``` method creates a circle path whose centered at ```(x, y)``` and whose radius is specified by ```radius```. 
+ex : 
+```javascript
+ctx.circle("50%", "50%", "25%")
+```
+
+<p align="center">
+  <img src="src/images/canvas/circle-0.png" />
+</p>
+
 
 ### Polygon
 ```ctx.polygon(x, y, size, sides )```
