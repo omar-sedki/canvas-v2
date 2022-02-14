@@ -11,10 +11,13 @@ CanvasRenderingContext2D.prototype.originalLineTo=CanvasRenderingContext2D.proto
 CanvasRenderingContext2D.prototype.originalClosePath=CanvasRenderingContext2D.prototype.closePath;
 CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.prototype.arcTo;
 
+//------- classes ------------
+@@include('./classes/point.js')
+@@include('./classes/line.js')
+
 
 //------- functions ------------
-@@include('./functions/point.js')
-@@include('./functions/line.js')
+
 @@include('./functions/percentToNumber.js')
 @@include('./functions/roundCorner.js')
 

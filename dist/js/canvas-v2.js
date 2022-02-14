@@ -11,25 +11,24 @@ CanvasRenderingContext2D.prototype.originalLineTo=CanvasRenderingContext2D.proto
 CanvasRenderingContext2D.prototype.originalClosePath=CanvasRenderingContext2D.prototype.closePath;
 CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.prototype.arcTo;
 
-
-//------- functions ------------
-function point(x,y)
-{
-this.x=x;
-this.y=y;
+//------- classes ------------
+class point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
 }
-function line(pointA,pointB)
-{
+class line{
+	constructor(pointA,pointB) {
 	this.pointA=pointA;
 	this.pointB=pointB;
+	}
 	
-	this.length=function()
-	{
+	length(){
 		return Math.sqrt(Math.pow(this.pointA.x-this.pointB.x,2)+Math.pow(this.pointA.y-this.pointB.y,2),2)
 	}
 
-	this.getPointOnLineDistanceFrom=function(point,distance)
-	{
+	getPointOnLineDistanceFrom(point,distance){
 		var newPoint={};
 		newPoint.x=(this.pointA.x-this.pointB.x)*distance/this.length();
 		newPoint.y=(this.pointA.y-this.pointB.y)*distance/this.length();
@@ -38,6 +37,10 @@ function line(pointA,pointB)
 		return  newPoint;
 	}
 }
+
+
+//------- functions ------------
+
 function percentToNumber(_value,_parent){
 var percentRegExp=/\s*(\d+(?:\.\d+)?)\s*%\s*/;
 if(typeof _value=="string" && percentRegExp.test(_value)){_value=Number(RegExp.$1) * _parent/100}
