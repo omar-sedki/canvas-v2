@@ -8,7 +8,7 @@
 			ctx.fillStyle = '#cbf692';
 			ctx.circle("50%", "50%", "25%");
 			ctx.fill();
-			ctx.stroke();</script><div style="text-align:center;margin:20px"><pre><code class="language-js hljs language-javascript">ctx.square(200,50,200,{borderRadius:20})</code></pre><canvas id="canvas2" width="600" height="300" style="border:1px solid #000000;"></canvas></div><script>//highlight code inside of <pre><code> tags		
+			ctx.stroke();</script><div style="text-align:center;margin:20px"><pre><code class="language-js hljs language-javascript">ctx.triangle({x:90,y:50},{x:250,y:150},{x:150,y:250})</code></pre><canvas id="canvas2" width="600" height="300" style="border:1px solid #000000;"></canvas></div><script>//highlight code inside of <pre><code> tags		
 			hljs.highlightAll();
 
 			var c = document.getElementById("canvas2");
@@ -16,7 +16,8 @@
 			ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
 			ctx.lineWidth =2;
 			ctx.fillStyle = '#cbf692';
-			ctx.square(200,50,200,{borderRadius:20});
+			//ctx.square(200,50,200,{borderRadius:20});
+			ctx.triangle({x:90,y:50},{x:250,y:150},{x:150,y:250});
 			ctx.fill();
 			ctx.stroke();</script><script>//ctx.rect("10%", "5%", "80%","40%",{borderRadius:[30,30,30,30]});
 	//ctx.square("10%", "50%", "20%",{borderRadius:[20,20,20,20]});

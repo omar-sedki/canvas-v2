@@ -25,6 +25,7 @@ CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.protot
 @@include('./prototype/lineTo.js')
 @@include('./prototype/moveTo.js')
 @@include('./prototype/square.js')
+@@include('./prototype/triangle.js')
 @@include('./prototype/rect.js')
 @@include('./prototype/circle.js')
 

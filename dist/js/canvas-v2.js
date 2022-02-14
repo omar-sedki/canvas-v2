@@ -72,6 +72,14 @@ CanvasRenderingContext2D.prototype.square = function(x,y,size,settings)
 if(arguments.length<4){this.originalRect(x,y,size,size)}
 if(arguments.length==4){this.rect(x,y,size,size,settings)}
 }
+CanvasRenderingContext2D.prototype.triangle = function(pointA,pointB,pointC)
+{
+	this.beginPath();
+	this.moveTo(pointA.x, pointA.y);
+	this.lineTo(pointB.x,pointB.y);
+	this.lineTo(pointC.x,pointC.y);
+	this.closePath();
+}
 CanvasRenderingContext2D.prototype.rect= function(x,y,width,height,moreSettings)
 {
 	x=percentToNumber(x,this.canvas.width);
