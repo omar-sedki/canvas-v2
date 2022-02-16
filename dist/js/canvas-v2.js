@@ -12,6 +12,21 @@ CanvasRenderingContext2D.prototype.originalClosePath=CanvasRenderingContext2D.pr
 CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.prototype.arcTo;
 
 //------- classes ------------
+class shape2D {
+  constructor(points) {
+    this.points = points;
+    }
+
+    createPath(ctx) {  
+        ctx.beginPath();
+        ctx.moveTo(this.points[0].x, this.points[0].y);
+        for (let i = 1; i < this.points.length; i++){ctx.lineTo(this.points[i].x, this.points[i].y);   }
+        ctx.closePath();
+
+    }
+
+}
+
 class point {
   constructor(x, y) {
     this.x = x;
@@ -74,11 +89,8 @@ if(arguments.length==4){this.rect(x,y,size,size,settings)}
 }
 CanvasRenderingContext2D.prototype.triangle = function(pointA,pointB,pointC)
 {
-	this.beginPath();
-	this.moveTo(pointA.x, pointA.y);
-	this.lineTo(pointB.x,pointB.y);
-	this.lineTo(pointC.x,pointC.y);
-	this.closePath();
+	triangle = new shape2D([pointA, pointB, pointC]);
+	triangle.createPath(this);
 }
 CanvasRenderingContext2D.prototype.rect= function(x,y,width,height,moreSettings)
 {

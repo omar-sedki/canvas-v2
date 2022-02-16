@@ -12,6 +12,7 @@ CanvasRenderingContext2D.prototype.originalClosePath=CanvasRenderingContext2D.pr
 CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.prototype.arcTo;
 
 //------- classes ------------
+@@include('./classes/shape2D.js')
 @@include('./classes/point.js')
 @@include('./classes/line.js')
 
