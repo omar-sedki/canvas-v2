@@ -13,7 +13,7 @@ CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.protot
 
 //------- classes ------------
 class shape2D {
-  constructor(points) {
+  constructor(points,options) {
     this.points = points;
     }
 
@@ -78,14 +78,19 @@ CanvasRenderingContext2D.prototype.moveTo=function(x,y){
 	this.originalMoveTo(x,y); 
 	this._lastPoint={x:x,y:y};  
 }
-CanvasRenderingContext2D.prototype.square = function(x,y,size,settings)
-{
-	x=percentToNumber(x,this.canvas.width);
-	y=percentToNumber(y,this.canvas.height);
-	size=percentToNumber(size,this.canvas.width);
+CanvasRenderingContext2D.prototype.square = function (x, y, size, options) {
+x = percentToNumber(x, this.canvas.width);
+y = percentToNumber(y, this.canvas.height);
+size = percentToNumber(size, this.canvas.width);
 
-if(arguments.length<4){this.originalRect(x,y,size,size)}
-if(arguments.length==4){this.rect(x,y,size,size,settings)}
+const points = [];
+	points.push({ x: x, y: y });
+	points.push({ x: x + size, y: y });
+	points.push({ x: x + size, y: y + size });
+	points.push({ x: x, y: y + size });
+
+  const square = new shape2D(points, options);
+  square.createPath(this);
 }
 CanvasRenderingContext2D.prototype.triangle = function(pointA,pointB,pointC)
 {

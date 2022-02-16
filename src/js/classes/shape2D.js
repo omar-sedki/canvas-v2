@@ -1,5 +1,5 @@
 class shape2D {
-  constructor(points) {
+  constructor(points,options) {
     this.points = points;
     }
 
