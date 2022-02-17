@@ -15,6 +15,7 @@ CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.protot
 @@include('./classes/shape2D.js')
 @@include('./classes/point.js')
 @@include('./classes/line.js')
+@@include('./classes/angle.js')
 
 
 //------- functions ------------

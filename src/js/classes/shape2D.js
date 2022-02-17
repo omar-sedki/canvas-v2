@@ -42,7 +42,10 @@ class shape2D {
         ctx.originalMoveTo(_startArcPoint.x, _startArcPoint.y);
       }
  
-      ctx.originalArcTo(this.points[i].x,this.points[i].y, _endArcPoint.x, _endArcPoint.y, this.borderRadius(i));
+      let _angle = new angle(this.points[_previndex], this.points[i], this.points[_nextindex]).rad;
+      let _realRadius = this.borderRadius(i) * Math.tan(_angle/2);
+     
+      ctx.originalArcTo(this.points[i].x,this.points[i].y, _endArcPoint.x, _endArcPoint.y,_realRadius );
       ctx.originalLineTo(_endLinePoint.x, _endLinePoint.y);
 
     }
