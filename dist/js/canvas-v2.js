@@ -15,18 +15,63 @@ CanvasRenderingContext2D.prototype.originalArcTo=CanvasRenderingContext2D.protot
 class shape2D {
   constructor(points,options) {
     this.points = points;
+    this.options = options;
+    
     }
 
-    createPath(ctx) {  
-        ctx.beginPath();
-        ctx.moveTo(this.points[0].x, this.points[0].y);
-        for (let i = 1; i < this.points.length; i++){ctx.lineTo(this.points[i].x, this.points[i].y);   }
+  borderRadius(ArrayIndex) {
+
+    let _borderRadius = this.options && this.options.borderRadius ? this.options.borderRadius : 0;
+    if (typeof _borderRadius == "number") { return _borderRadius }
+    else if (typeof _borderRadius == 'object' && _borderRadius.length == this.points.length) { return _borderRadius[ArrayIndex] }
+    else{return 0}
+  }
+
+  createPath(ctx) {  
+     
+
+      ctx.beginPath();
+      
+
+    for (let i = 0; i < this.points.length; i++){
+      let _previndex = i == 0 ? this.points.length - 1 : i - 1;
+      let _nextindex = (i == this.points.length - 1) ? 0 : i + 1;
+
+      let _startArcPoint = new line(
+        { x: this.points[i].x, y: this.points[i].y },
+        { x: this.points[_previndex].x, y: this.points[_previndex].y }
+      ).getPointOnLineDistanceFrom("A", this.borderRadius(i));
+
+      let _endArcPoint = new line(
+        { x: this.points[i].x, y: this.points[i].y },
+        { x: this.points[_nextindex].x, y: this.points[_nextindex].y }
+      ).getPointOnLineDistanceFrom("A", this.borderRadius(i));
+
+      let _endLinePoint = new line(
+        { x: this.points[i].x, y: this.points[i].y },
+        { x: this.points[_nextindex].x, y: this.points[_nextindex].y }
+      ).getPointOnLineDistanceFrom("B", this.borderRadius(_nextindex));
+
+      if (i == 0) {
+        ctx.originalMoveTo(_startArcPoint.x, _startArcPoint.y);
+      }
+ 
+      ctx.originalArcTo(this.points[i].x,this.points[i].y, _endArcPoint.x, _endArcPoint.y, this.borderRadius(i));
+      ctx.originalLineTo(_endLinePoint.x, _endLinePoint.y);
+
+    }
+
+
         ctx.closePath();
 
     }
 
 }
 
+
+
+	
+ 
 class point {
   constructor(x, y) {
     this.x = x;
@@ -44,11 +89,11 @@ class line{
 	}
 
 	getPointOnLineDistanceFrom(point,distance){
-		var newPoint={};
-		newPoint.x=(this.pointA.x-this.pointB.x)*distance/this.length();
-		newPoint.y=(this.pointA.y-this.pointB.y)*distance/this.length();
-		if(point=="A"){newPoint.x=-1*newPoint.x+pointA.x;newPoint.y=-1*newPoint.y+pointA.y;}
-		if(point=="B"){newPoint.x+=pointB.x;newPoint.y+=pointB.y;}
+		let newPoint={};
+		newPoint.x=(this.pointB.x-this.pointA.x)*distance/this.length();
+		newPoint.y=(this.pointB.y-this.pointA.y)*distance/this.length();
+		if(point=="A"){newPoint.x=this.pointA.x+newPoint.x;newPoint.y=this.pointA.y+newPoint.y;}
+		if(point=="B"){newPoint.x = this.pointB.x -newPoint.x;newPoint.y = this.pointB.y -newPoint.y;}
 		return  newPoint;
 	}
 }
@@ -92,9 +137,9 @@ const points = [];
   const square = new shape2D(points, options);
   square.createPath(this);
 }
-CanvasRenderingContext2D.prototype.triangle = function(pointA,pointB,pointC)
+CanvasRenderingContext2D.prototype.triangle = function(pointA,pointB,pointC,options)
 {
-	triangle = new shape2D([pointA, pointB, pointC]);
+	triangle = new shape2D([pointA, pointB, pointC],options);
 	triangle.createPath(this);
 }
 CanvasRenderingContext2D.prototype.rect= function(x,y,width,height,moreSettings)

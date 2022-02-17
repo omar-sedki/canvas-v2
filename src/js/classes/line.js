@@ -9,11 +9,11 @@ class line{
 	}
 
 	getPointOnLineDistanceFrom(point,distance){
-		var newPoint={};
-		newPoint.x=(this.pointA.x-this.pointB.x)*distance/this.length();
-		newPoint.y=(this.pointA.y-this.pointB.y)*distance/this.length();
-		if(point=="A"){newPoint.x=-1*newPoint.x+pointA.x;newPoint.y=-1*newPoint.y+pointA.y;}
-		if(point=="B"){newPoint.x+=pointB.x;newPoint.y+=pointB.y;}
+		let newPoint={};
+		newPoint.x=(this.pointB.x-this.pointA.x)*distance/this.length();
+		newPoint.y=(this.pointB.y-this.pointA.y)*distance/this.length();
+		if(point=="A"){newPoint.x=this.pointA.x+newPoint.x;newPoint.y=this.pointA.y+newPoint.y;}
+		if(point=="B"){newPoint.x = this.pointB.x -newPoint.x;newPoint.y = this.pointB.y -newPoint.y;}
 		return  newPoint;
 	}
 }

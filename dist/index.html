@@ -16,10 +16,10 @@
 			ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
 			ctx.lineWidth =2;
 			ctx.fillStyle = '#cbf692';
-			ctx.square(200,50,200,{borderRadius:20});
-						ctx.fill();
+			ctx.square(200,50,200,{borderRadius:[10,20,30,50]});
+			ctx.fill();
 			ctx.stroke();
-			ctx.triangle({x:90,y:50},{x:250,y:150},{x:150,y:250});
+		  	ctx.triangle({x:90,y:50},{x:250,y:150},{x:150,y:250},{borderRadius:30});
 			ctx.fill();
 			ctx.stroke();</script><script>//ctx.rect("10%", "5%", "80%","40%",{borderRadius:[30,30,30,30]});
 	//ctx.square("10%", "50%", "20%",{borderRadius:[20,20,20,20]});
