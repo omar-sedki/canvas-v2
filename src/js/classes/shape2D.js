@@ -14,7 +14,7 @@ class shape2D {
   }
 
   createPath(ctx) {  
-     
+
 
       ctx.beginPath();
       
@@ -22,16 +22,24 @@ class shape2D {
     for (let i = 0; i < this.points.length; i++){
       let _previndex = i == 0 ? this.points.length - 1 : i - 1;
       let _nextindex = (i == this.points.length - 1) ? 0 : i + 1;
+      let _nextNextindex = (i == this.points.length - 1 || i == this.points.length - 2) ? i-this.points.length+2 : i + 2;
+
+      let _angle = new angle(this.points[_previndex], this.points[i], this.points[_nextindex]).degree;
+      let _angleNext = new angle( this.points[i], this.points[_nextindex],this.points[_nextNextindex]).degree;
+     
+      let _realRadius = this.borderRadius(i) * Math.tan(_angle/2);
+      
+  
 
       let _startArcPoint = new line(
         { x: this.points[i].x, y: this.points[i].y },
         { x: this.points[_previndex].x, y: this.points[_previndex].y }
-      ).getPointOnLineDistanceFrom("A", this.borderRadius(i));
+      ).getPointOnLineDistanceFrom("A",  _realRadius);
 
       let _endArcPoint = new line(
         { x: this.points[i].x, y: this.points[i].y },
         { x: this.points[_nextindex].x, y: this.points[_nextindex].y }
-      ).getPointOnLineDistanceFrom("A", this.borderRadius(i));
+      ).getPointOnLineDistanceFrom("A",  _realRadius);
 
       let _endLinePoint = new line(
         { x: this.points[i].x, y: this.points[i].y },
@@ -42,10 +50,10 @@ class shape2D {
         ctx.originalMoveTo(_startArcPoint.x, _startArcPoint.y);
       }
  
-      let _angle = new angle(this.points[_previndex], this.points[i], this.points[_nextindex]).rad;
-      let _realRadius = this.borderRadius(i) * Math.tan(_angle/2);
+
+      
      
-      ctx.originalArcTo(this.points[i].x,this.points[i].y, _endArcPoint.x, _endArcPoint.y,_realRadius );
+      ctx.originalArcTo(this.points[i].x,this.points[i].y, _endArcPoint.x, _endArcPoint.y,this.borderRadius(i) );
       ctx.originalLineTo(_endLinePoint.x, _endLinePoint.y);
 
     }

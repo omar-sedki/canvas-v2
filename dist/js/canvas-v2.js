@@ -28,7 +28,7 @@ class shape2D {
   }
 
   createPath(ctx) {  
-     
+
 
       ctx.beginPath();
       
@@ -36,16 +36,24 @@ class shape2D {
     for (let i = 0; i < this.points.length; i++){
       let _previndex = i == 0 ? this.points.length - 1 : i - 1;
       let _nextindex = (i == this.points.length - 1) ? 0 : i + 1;
+      let _nextNextindex = (i == this.points.length - 1 || i == this.points.length - 2) ? i-this.points.length+2 : i + 2;
+
+      let _angle = new angle(this.points[_previndex], this.points[i], this.points[_nextindex]).degree;
+      let _angleNext = new angle( this.points[i], this.points[_nextindex],this.points[_nextNextindex]).degree;
+     
+      let _realRadius = this.borderRadius(i) * Math.tan(_angle/2);
+      
+  
 
       let _startArcPoint = new line(
         { x: this.points[i].x, y: this.points[i].y },
         { x: this.points[_previndex].x, y: this.points[_previndex].y }
-      ).getPointOnLineDistanceFrom("A", this.borderRadius(i));
+      ).getPointOnLineDistanceFrom("A",  _realRadius);
 
       let _endArcPoint = new line(
         { x: this.points[i].x, y: this.points[i].y },
         { x: this.points[_nextindex].x, y: this.points[_nextindex].y }
-      ).getPointOnLineDistanceFrom("A", this.borderRadius(i));
+      ).getPointOnLineDistanceFrom("A",  _realRadius);
 
       let _endLinePoint = new line(
         { x: this.points[i].x, y: this.points[i].y },
@@ -56,10 +64,10 @@ class shape2D {
         ctx.originalMoveTo(_startArcPoint.x, _startArcPoint.y);
       }
  
-      let _angle = new angle(this.points[_previndex], this.points[i], this.points[_nextindex]).rad;
-      let _realRadius = this.borderRadius(i) * Math.tan(_angle/2);
+
+      
      
-      ctx.originalArcTo(this.points[i].x,this.points[i].y, _endArcPoint.x, _endArcPoint.y,_realRadius );
+      ctx.originalArcTo(this.points[i].x,this.points[i].y, _endArcPoint.x, _endArcPoint.y,this.borderRadius(i) );
       ctx.originalLineTo(_endLinePoint.x, _endLinePoint.y);
 
     }
@@ -109,35 +117,14 @@ class angle {
   }
 
   calculate() {
-    const l1_Slope =
-      this.pointA.x == this.pointB.x
-        ? "undefined slope"
-        : (this.pointA.y - this.pointB.y) / (this.pointA.x - this.pointB.x);
-    let l1_angleRad =
-      l1_Slope == "undefined slope" ? Math.PI / 2 : Math.atan(l1_Slope);
-    if (l1_angleRad < 0) {
-      l1_angleRad = 2 * Math.PI + l1_angleRad;
-    } //negative angle add 2Pi
-    let l1_angleDeg = (l1_angleRad * 180) / Math.PI;
-
-    const l2_Slope =
-      this.pointC.x == this.pointB.x
-        ? "undefined slope"
-        : (this.pointC.y - this.pointB.y) / (this.pointC.x - this.pointB.x);
-    let l2_angleRad =
-      l2_Slope == "undefined slope" ? Math.PI / 2 : Math.atan(l2_Slope);
-    if (l2_angleRad < 0) {
-      l2_angleRad = 2 * Math.PI + l2_angleRad;
-    }
-    let l2_angleDeg = (l2_angleRad * 180) / Math.PI;
-
-	const angleDiff = l1_angleRad - l2_angleRad;
-	  
-	  this.rad = Math.abs(angleDiff);
-	  this.rad = this.rad < Math.PI ? this.rad : (2 * Math.PI)-this.rad;
-	  this.degree = (this.rad * 180) / Math.PI;
-
-
+    const dAx = this.pointA.x - this.pointB.x;
+    const dAy = this.pointA.y - this.pointB.y;
+    const dBx = this.pointC.x - this.pointB.x;
+    const dBy = this.pointC.y - this.pointB.y;
+    let angle = Math.atan2(dAx * dBy - dAy * dBx, dAx * dBx + dAy * dBy);
+    if(angle < 0) {angle = angle * -1;}
+    this.rad=angle;
+    this.degree = angle * 180 / Math.PI;
   }
 }
 
